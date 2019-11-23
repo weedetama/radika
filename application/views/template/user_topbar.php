@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-md-8 col-sm-9 col-xs-6">
                     <div class="cart-menu">
-                        <div class="user user-style-3 f-right">
+                        <!-- <div class="user user-style-3 f-right">
                             <a href="">
                                 <i class="pe-7s-add-user"></i>
                             </a>
@@ -25,7 +25,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="shopping-cart f-right">
                             <?php $keranjang;  ?>
                             <a class="top-cart" href="<?= base_url() ?>produk/cart">
@@ -92,9 +92,21 @@
                                             <li><a href="<?= base_url('category/peternakan'); ?>">Peternakan</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="">blog</a>
+                                    <li>
+                                        <a href="">
+                                            blog
+                                        </a>
                                     </li>
-                                    <li><a href="">about</a></li>
+                                    <li>
+                                        <a href="">
+                                            about
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            login
+                                        </a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
