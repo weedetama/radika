@@ -13,13 +13,28 @@
                 <div class="col-md-8 col-sm-9 col-xs-6">
                     <div class="cart-menu">
                         <div class="user user-style-3 f-right">
-                            <a href="">
-                                <i class="pe-7s-add-user"></i>
-                            </a>
+                            <?php if ($this->session->userdata('username')) { ?>
+                                <a href="">
+                                    <i class="pe-7s-user"></i>
+                                </a>
+                            <?php } else { ?>
+                                <a href="">
+                                    <i class="pe-7s-add-user"></i>
+                                </a>
+                            <?php } ?>
                             <div class="currence-user-page">
                                 <div class="user-page">
                                     <ul>
                                         <?php if ($this->session->userdata('username')) { ?>
+                                            <li>
+                                                <!-- <a href=""> -->
+                                                <!-- <i class="pe-7s-user"></i> -->
+                                                <div class="alert alert-warning" role="alert">
+                                                    selamat datang !
+                                                    <strong><?= $this->session->userdata('username') ?></strong>
+                                                </div>
+                                                <!-- </a> -->
+                                            </li>
                                             <li><a class="my-cart" href="<?= base_url('produk/cart'); ?>">
                                                     <i class="pe-7s-cart"></i>
                                                     Keranjang
@@ -122,11 +137,6 @@
                                             about
                                         </a>
                                     </li>
-                                    <!-- <li>
-                                        <a href="">
-                                            login
-                                        </a>
-                                    </li> -->
                                 </ul>
                             </nav>
                         </div>
@@ -162,11 +172,6 @@
                                     about
                                 </a>
                             </li>
-                            <!-- <li>
-                                <a href="">
-                                    login
-                                </a>
-                            </li> -->
                         </ul>
                     </nav>
                 </div>
