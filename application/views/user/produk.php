@@ -21,57 +21,15 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="blog-sidebar">
-                        <!-- <div class="single-sidebar">
-                            <h3 class="sidebar-title">Choose Price</h3>
-                            <div class="price-filter">
-                                <div id="slider-range"></div>
-                                <div class="price-slider-amount">
-                                    <input type="text" id="amount" name="price" />
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="single-sidebar">
                             <h3 class="sidebar-title">Kategori</h3>
                             <div class="sidebar-list">
                                 <ul>
                                     <li><a href="<?= base_url('category/pertanian') ?>">Pertanian </a></li>
                                     <li><a href="<?= base_url('category/peternakan') ?>">Peternakan </a></li>
-                                    <!-- <li><input type="checkbox"> <a href="#">Tops (3)</a></li> -->
                                 </ul>
                             </div>
                         </div>
-
-                        <!-- TAG -->
-                        <!-- <div class="single-sidebar">
-                            <h3 class="sidebar-title">Popular Tags</h3>
-                            <div class="tag">
-                                <ul>
-                                    <li><a href="#">Clothing</a></li>
-                                    <li><a href="#">accessories</a></li>
-                                    <li><a href="#">fashion</a></li>
-                                    <li><a href="#">footwear</a></li>
-                                    <li><a href="#">kid</a></li>
-                                    <li><a href="#">View All Tags</a></li>
-                                </ul>
-                            </div>
-                        </div> -->
-                        <!-- END TAG -->
-
-                        <!-- <div class="single-sidebar">
-                            <div class="sidebar-img-text">
-                                <div class="sidebar-img">
-                                    <a href="#">
-                                        <img src="<?= base_url(); ?>assets/home/assets/img/shop/2.jpg" alt="">
-                                    </a>
-                                    <div class="sidebar-text">
-                                        <h3>Hemat sampai </h3>
-                                        <h2>25% </h2>
-                                        <h3>cap</h3>
-                                        <a href="#">shop now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
 
@@ -87,22 +45,8 @@
                                                 Produk
                                             </a>
                                         </li>
-                                        <!-- <li>
-                                            <a href="#list" data-toggle="tab">
-                                                <i class="fa fa-align-justify"></i>
-                                                List
-                                            </a>
-                                        </li> -->
                                     </ul>
                                 </div>
-                                <!-- <div class="tab-sort">
-                                    <label>Urutkan : </label>
-                                    <select>
-                                        <option value="">Harga</option>
-                                        <option value="">Nama</option>
-                                        <option value="">Stok</option>
-                                    </select>
-                                </div> -->
                             </div>
                             <div class="tab-product">
                                 <div class="tab-content">
@@ -120,12 +64,14 @@
                                                                     <i class="pe-7s-look"></i>
                                                                 </a>
                                                             </div>
-                                                            <div class="button-group">
-                                                                <a href="<?= base_url(); ?>produk/add/<?= $b->id; ?>" title="Add to Cart">
-                                                                    <i class="pe-7s-cart"></i>
-                                                                    add to cart
-                                                                </a>
-                                                            </div>
+                                                            <?php if ($this->session->userdata('username')) { ?>
+                                                                <div class="button-group">
+                                                                    <a href="<?= base_url(); ?>produk/add/<?= $b->id; ?>" title="Add to Cart">
+                                                                        <i class="pe-7s-cart"></i>
+                                                                        add to cart
+                                                                    </a>
+                                                                </div>
+                                                            <?php } ?>
                                                         </div>
                                                         <div class="shop-text-all">
                                                             <div class="title-color fix">
@@ -214,10 +160,12 @@
                                                                                                                         <i class="pe-7s-back"></i>
                                                                                                                         close
                                                                                                                     </a>
-                                                                                                                    <a href="<?= base_url(); ?>produk/add/<?= $b->id; ?>">
-                                                                                                                        <i class="pe-7s-cart"></i>
-                                                                                                                        add to cart
-                                                                                                                    </a>
+                                                                                                                    <?php if ($this->session->userdata('username')) { ?>
+                                                                                                                        <a href="<?= base_url(); ?>produk/add/<?= $b->id; ?>">
+                                                                                                                            <i class="pe-7s-cart"></i>
+                                                                                                                            add to cart
+                                                                                                                        </a>
+                                                                                                                    <?php } ?>
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                         </div>
@@ -239,23 +187,8 @@
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
-
-                                    <!-- pagination -->
-                                    <!-- <div class="page-pagination text-center">
-                                        <ul>
-                                            <li><a class="active" href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#"><i class="fa fa-angle-double-right"></i>
-                                                </a></li>
-                                        </ul>
-                                    </div> -->
-                                    <!-- end pagination -->
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

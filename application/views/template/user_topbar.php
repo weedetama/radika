@@ -27,8 +27,6 @@
                                     <ul>
                                         <?php if ($this->session->userdata('username')) { ?>
                                             <li>
-                                                <!-- <a href=""> -->
-                                                <!-- <i class="pe-7s-user"></i> -->
                                                 <div class="alert alert-warning" role="alert">
                                                     selamat datang !
                                                     <strong><?= $this->session->userdata('username') ?></strong>
@@ -97,9 +95,9 @@
                                                         <?= $items['qty'] ?> x <?= number_format($items['price'], 0, ',', '.') ?>
                                                     </span>
                                                 </div>
-                                                <div class="cart-del">
+                                                <!-- <div class="cart-del">
                                                     <i class="pe-7s-close-circle"></i>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </li>
                                         <li>

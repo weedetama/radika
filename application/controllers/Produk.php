@@ -47,11 +47,11 @@ class Produk extends CI_Controller
     public function delete()
     {
         $this->cart->destroy();
-        redirect('produk');
+        redirect('produk/cart');
     }
 
 
-    // remove cart--
+    // remove cart-- (help me dong !!)
     // public function remove($id)
     // {
     //     $barang = $this->Mitem->find($id);
