@@ -75,41 +75,43 @@
                                 <span>
                                     <?= $keranjang =  $this->cart->total_items(); ?>
                                 </span>
-                                <ul>
-                                    <?php
-                                        foreach ($this->cart->contents() as $items) : ?>
-                                        <li>
-                                            <div class="cart-img-price">
-                                                <!-- <div class="cart-img">
+                                <?php if ($keranjang == 0) { } else { ?>
+                                    <ul>
+                                        <?php
+                                                foreach ($this->cart->contents() as $items) : ?>
+                                            <li>
+                                                <div class="cart-img-price">
+                                                    <!-- <div class="cart-img">
                                                     <a href="">
                                                         <img src="<?= base_url() . '/uploads/' . $items['image'] ?>" alt="" width="120px;">
                                                     </a>
                                                 </div> -->
-                                                <div class="cart-content">
-                                                    <h3>
-                                                        <a href="">
-                                                            <?= $items['name'] ?>
-                                                        </a>
-                                                    </h3>
-                                                    <span class="cart-price">
-                                                        <?= $items['qty'] ?> x <?= number_format($items['price'], 0, ',', '.') ?>
-                                                    </span>
-                                                </div>
-                                                <!-- <div class="cart-del">
+                                                    <div class="cart-content">
+                                                        <h3>
+                                                            <a href="">
+                                                                <?= $items['name'] ?>
+                                                            </a>
+                                                        </h3>
+                                                        <span class="cart-price">
+                                                            <?= $items['qty'] ?> x <?= number_format($items['price'], 0, ',', '.') ?>
+                                                        </span>
+                                                    </div>
+                                                    <!-- <div class="cart-del">
                                                     <i class="pe-7s-close-circle"></i>
                                                 </div> -->
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p class="total">
-                                                Subtotal:
-                                                <span>
-                                                    <?= number_format($items['subtotal'], 0, ',', '.') ?>
-                                                </span>
-                                            </p>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p class="total">
+                                                    Subtotal:
+                                                    <span>
+                                                        <?= number_format($items['subtotal'], 0, ',', '.') ?>
+                                                    </span>
+                                                </p>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php } ?>
                             </div>
                         <?php } ?>
                         <!-- menu -->
