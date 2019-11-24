@@ -137,8 +137,16 @@
                             </li>
                             <li class="active1"><a class="active1" href="#">Blog</a>
                             </li>
-                            <li><a href="">about</a></li>
-
+                            <li>
+                                <a href="">
+                                    about
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    login
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
