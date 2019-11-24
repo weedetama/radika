@@ -28,7 +28,7 @@
                                     </li>
                                     <li role="separator" class="divider"></li>
                                     <li>
-                                        <a href="#">
+                                        <a href="<?= base_url('auth/logout') ?>">
                                             <i class="ti-power-off pdd-right-10"></i>
                                             <span>Logout</span>
                                         </a>
