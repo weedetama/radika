@@ -24,57 +24,6 @@
     <div class="checkout-area ptb-100">
         <div class="container">
             <div class="row">
-                <!-- <div class="col-md-5">
-                    <div class="customer-coupon">
-                        <h3><i class="fa fa-square-o"></i> Have a coupon? <span id="coupon">Click here to enter your code</span></h3>
-                        <div id="have-coupon" class="coupon-checkout-content">
-                            <div class="coupon-info">
-                                <form action="#">
-                                    <p class="checkout-coupon">
-                                        <label>
-                                            Coupon code
-                                            <span class="required">*</span>
-                                        </label>
-                                        <input type="text" />
-                                        <input class="coupon-submit" type="submit" value="Apply Coupon" />
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="col-md-7 f-right">
-                    <div class="returning-customer">
-                        <h3><i class="fa fa-user"></i> Returning customer? <span id="customer">Click here to login</span></h3>
-                        <div id="customer-login" class="coupon-content">
-                            <div class="coupon-info">
-                                <p class="coupon-text">If you have shopped with us before, please enter your details in the boxes below. If you are a new customer, please proceed to the Billing & Shipping section.</p>
-                                <form action="#">
-                                    <p class="form-row-first">
-                                        <label>Username or email <span class="required">*</span></label>
-                                        <input type="text" />
-                                    </p>
-                                    <p class="form-row-last">
-                                        <label>Password <span class="required">*</span></label>
-                                        <input type="text" />
-                                    </p>
-                                    <p class="form-row">
-                                        <input type="submit" value="Login" />
-                                        <label>
-                                            <input type="checkbox" />
-                                            Remember me
-                                        </label>
-                                    </p>
-                                    <p class="lost-password">
-                                        <a href="#">Lost your password?</a>
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-            <div class="row">
                 <div class="col-md-5">
                     <div class="your-order-payment">
                         <div class="your-order">
@@ -82,10 +31,17 @@
                             <ul>
                                 <?php
                                 foreach ($this->cart->contents() as $items) : ?>
-                                    <li><?= $items['name'] ?> x <?= $items['qty'] ?> <span>Rp. <?= number_format($items['subtotal'], 0, ',', '.') ?></span></li>
+                                    <li>
+                                        <?= $items['name'] ?> x <?= $items['qty'] ?>
+                                        <span>
+                                            Rp. <?= number_format($items['subtotal'], 0, ',', '.') ?>
+                                        </span>
+                                    </li>
                                 <?php endforeach; ?>
-                                <li class="order-total">Total Pembelian <span> Rp. <?= number_format($this->cart->total(), 0, ',', '.') ?>,-</span></li>
-
+                                <li class="order-total">Total Pembelian <span>
+                                        Rp. <?= number_format($this->cart->total(), 0, ',', '.'); ?>,-
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                         <div class="your-payment">
@@ -264,4 +220,5 @@
             </div>
         </div>
     </div>
+
     <!-- checkout area end -->
