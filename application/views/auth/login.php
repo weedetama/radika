@@ -22,7 +22,6 @@
                         <div class="login-title">
                             <h4>login</h4>
                             <?= $this->session->flashdata('pesan') ?>
-                            <!-- <p>Please login using account detail bellow.</p> -->
                         </div>
                         <div class="login-form">
                             <form action="<?= base_url('auth/login'); ?>" method="post">
@@ -39,7 +38,9 @@
                                     <button class="login-btn" type="submit">Login</button>
                                 </div>
                                 <div class="new-account">
-                                    <p><a href="">Belum punya akun ? Daftar !</a></p>
+                                    <a href="<?= base_url('registrasi'); ?>">
+                                        <p>Belum punya akun ? Daftar !</p>
+                                    </a>
                                 </div>
                             </form>
                         </div>

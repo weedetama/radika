@@ -56,7 +56,7 @@
                                                     Login
                                                 </a>
                                             </li>
-                                            <li><a href="">
+                                            <li><a href="<?= base_url('registrasi'); ?>">
                                                     <i class="pe-7s-add-user"></i>
                                                     Daftar
                                                 </a>
