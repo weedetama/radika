@@ -74,7 +74,8 @@
                 </div>
             </div>
             <div class="row mt-50">
-                <div class="col-md-5 col-sm-12 col-xs-12 f-right">
+
+                <div class="col-md-5 col-sm-12 col-xs-12 f-left">
                     <div class="cart-total">
                         <ul>
                             <li class="cart-black">
@@ -86,11 +87,25 @@
                             <div class="cart-total-btn1 f-left">
                                 <a href="<?= base_url('produk/delete'); ?>">Hapus Keranjang</a>
                             </div>
-                            <div class="cart-total-btn1">
+                            <div class="cart-total-btn2 f-right">
                                 <a href="<?= base_url('produk'); ?>">Lanjut Belanja</a>
                             </div>
-                            <div class="cart-total-btn2 f-right">
-                                <a href="<?= base_url('produk/checkout'); ?>">Pembayaran</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12 f-right">
+                    <div class="tax-coupon-all">
+                        <div class="tax-coupon-details tab-content">
+                            <div class="shipping-dec tab-pane active">
+                                <div class="shipping-form">
+                                    <div class="single-shipping-botton">
+                                        <button>
+                                            <a href="<?= base_url('produk/checkout'); ?>">
+                                                <span class="text-white">PEMBAYARAN</span>
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
