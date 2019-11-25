@@ -123,8 +123,8 @@
                                     </li>
                                     <li><a href="<?= base_url('produk'); ?>">Belanja</a>
                                         <ul class="dropdown">
-                                            <li><a href="<?= base_url('category/pertanian'); ?>">Pertanian</a></li>
-                                            <li><a href="<?= base_url('category/peternakan'); ?>">Peternakan</a></li>
+                                            <li><a href="<?= base_url('kategori/pertanian'); ?>">Pertanian</a></li>
+                                            <li><a href="<?= base_url('kategori/peternakan'); ?>">Peternakan</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -161,8 +161,8 @@
                             </li>
                             <li class="active1"><a class="active1" href="<?= base_url('produk'); ?>">Belanja</a>
                                 <ul>
-                                    <li><a href="<?= base_url('category/pertanian') ?>">Pertanian</a></li>
-                                    <li><a href="<?= base_url('category/peternakan') ?>">Peternakan</a></li>
+                                    <li><a href="<?= base_url('kategori/pertanian') ?>">Pertanian</a></li>
+                                    <li><a href="<?= base_url('kategori/peternakan') ?>">Peternakan</a></li>
                                 </ul>
                             </li>
                             <li class="active1"><a class="active1" href="#">Blog</a>

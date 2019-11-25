@@ -7,6 +7,15 @@ class Item extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mitem');
+        if ($this->session->userdata('role_id') != '1') {
+            $this->session->set_flashdata('pesan', ' <div class="alert alert-warning" role="alert">
+                Anda belum <strong>login!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
+            redirect('auth/login');
+        }
     }
 
     public function index()

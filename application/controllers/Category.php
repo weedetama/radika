@@ -7,6 +7,15 @@ class Category extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mcategory');
+        if ($this->session->userdata('role_id') != '1') {
+            $this->session->set_flashdata('pesan', ' <div class="alert alert-warning" role="alert">
+                Anda belum <strong>login!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
+            redirect('auth/login');
+        }
     }
 
     public function index()
@@ -55,25 +64,5 @@ class Category extends CI_Controller
         $this->Mcategory->hapusCategory($id);
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kategori berhasil dihapus</div>');
         redirect('category');
-    }
-
-    // Kategori Pertanian
-    public function pertanian()
-    {
-        $data['pertanian'] = $this->Mcategory->dataPertanian()->result();
-        $this->load->view('template/user_header');
-        $this->load->view('template/user_topbar');
-        $this->load->view('user/pertanian', $data);
-        $this->load->view('template/user_footer');
-    }
-
-    // Kategori Peternakan
-    public function peternakan()
-    {
-        $data['peternakan'] = $this->Mcategory->dataPeternakan()->result();
-        $this->load->view('template/user_header');
-        $this->load->view('template/user_topbar');
-        $this->load->view('user/peternakan', $data);
-        $this->load->view('template/user_footer');
     }
 }

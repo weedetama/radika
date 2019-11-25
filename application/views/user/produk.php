@@ -15,7 +15,6 @@
         </div>
     </div>
     <!-- breadcrumbs area end -->
-    <!-- login area end -->
     <div class="shop-page-area ptb-100">
         <div class="container">
             <div class="row">
@@ -25,8 +24,8 @@
                             <h3 class="sidebar-title">Kategori</h3>
                             <div class="sidebar-list">
                                 <ul>
-                                    <li><a href="<?= base_url('category/pertanian') ?>">Pertanian </a></li>
-                                    <li><a href="<?= base_url('category/peternakan') ?>">Peternakan </a></li>
+                                    <li><a href="<?= base_url('kategori/pertanian') ?>">Pertanian </a></li>
+                                    <li><a href="<?= base_url('kategori/peternakan') ?>">Peternakan </a></li>
                                 </ul>
                             </div>
                         </div>
