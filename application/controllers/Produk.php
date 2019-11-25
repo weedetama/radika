@@ -7,6 +7,7 @@ class Produk extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mitem');
+        $this->load->model('Minvoice');
     }
 
     public function index()
@@ -66,12 +67,25 @@ class Produk extends CI_Controller
     //     redirect('user/cart');
     // }
 
-    // Checkout / Pembayaran !
+    // Layout checkout / Pembayaran !
     public function checkout()
     {
         $this->load->view('template/user_header');
         $this->load->view('template/user_topbar');
         $this->load->view('user/pembayaran');
         $this->load->view('template/user_footer');
+    }
+
+    //proses pembayaran
+    public function proses()
+    {
+        $is_processed = $this->Minvoice->index();
+        if ($is_processed) {
+            $this->cart->destroy();
+            $this->load->view('template/user_header');
+            $this->load->view('template/user_topbar');
+            $this->load->view('user/proses');
+            $this->load->view('template/user_footer');
+        } else { }
     }
 }

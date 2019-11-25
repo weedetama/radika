@@ -37,7 +37,7 @@
                                     <?php
                                         foreach ($this->cart->contents() as $items) : ?>
                                         <li>
-                                            <?= $items['name'] ?> x <?= $items['qty'] ?>
+                                            [ <?= $items['name'] ?> ] &times [ <?= $items['qty'] ?> ]
                                             <span>
                                                 Rp. <?= number_format($items['subtotal'], 0, ',', '.') ?>
                                             </span>
@@ -120,9 +120,17 @@
                         </div>
                     </div>
                     <div class="col-md-7">
+                        <?php if (validation_errors()) : ?>
+                            <div class="alert alert-warning " role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong> <?= validation_errors(); ?> </strong>
+                            </div>
+                        <?php endif; ?>
                         <div class="billing-details-area">
                             <h2>Masukan Data diri</h2>
-                            <form action="#">
+                            <form action="<?= base_url('produk/proses'); ?>" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="billing-input">
@@ -130,7 +138,7 @@
                                                 Nama Lengkap
                                                 <span class="required">*</span>
                                             </label>
-                                            <input placeholder="" type="text">
+                                            <input placeholder="" type="text" name="nama">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -139,7 +147,7 @@
                                                 Alamat Lengkap
                                                 <span class="required">*</span>
                                             </label>
-                                            <input placeholder="" type="text">
+                                            <input placeholder="" type="text" name="alamat">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -148,7 +156,7 @@
                                                 Kota
                                                 <span class="required">*</span>
                                             </label>
-                                            <input type="text">
+                                            <input type="text" name="kota">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -157,7 +165,7 @@
                                                 Kode Pos
                                                 <span class="required">*</span>
                                             </label>
-                                            <input type="text">
+                                            <input type="text" name="kodepos">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -166,7 +174,7 @@
                                                 No. Telepon
                                                 <span class="required">*</span>
                                             </label>
-                                            <input placeholder="" type="text">
+                                            <input placeholder="" type="text" name="notelf">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -175,13 +183,13 @@
                                                 Jasa Pengiriman
                                                 <span class="required">*</span>
                                             </label>
-                                            <select>
-                                                <option selected disabled>--pengiriman--</option>
-                                                <option value="">Gojek</option>
-                                                <option value="">Grab</option>
-                                                <option value="">JNE</option>
-                                                <option value="">TIKI</option>
-                                                <option value="">POS INDONESIA</option>
+                                            <select name="pengiriman">
+                                                <option disabled selected>--Pilih Pengiriman--</option>
+                                                <option value="Gojek">Gojek</option>
+                                                <option value="Grab">Grab</option>
+                                                <option value="JNE">JNE</option>
+                                                <option value="TIKI">TIKI</option>
+                                                <option value="POS INDONESIA">POS INDONESIA</option>
                                             </select>
                                         </div>
                                     </div>
@@ -191,11 +199,11 @@
                                                 Pilih Bank
                                                 <span class="required">*</span>
                                             </label>
-                                            <select>
-                                                <option selected disabled>--bank--</option>
-                                                <option value="">MANDIRI</option>
-                                                <option value="">BCA</option>
-                                                <option value="">BRI</option>
+                                            <select name="bank">
+                                                <option selected disabled>--Pilih Bank--</option>
+                                                <option value="MANDIRI">MANDIRI</option>
+                                                <option value="BCA">BCA</option>
+                                                <option value="BRI">BRI</option>
                                             </select>
                                         </div>
                                     </div>
@@ -205,16 +213,15 @@
                                                 Upload bukti pembayaran
                                                 <span class="required">*</span>
                                             </label>
-                                            <input type="file" class="form-control">
+                                            <input type="file" class="form-control" name="buktifoto">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="billing-input">
                                             <label>
                                                 Catatan
-                                                <span class="required">*</span>
                                             </label>
-                                            <textarea id="checkout-mess" placeholder="Tambahkan catatan tentang pesanan anda"></textarea>
+                                            <textarea id="checkout-mess" placeholder="Tambahkan catatan tentang pesanan anda" name="catatan"></textarea>
                                         </div>
                                     </div>
                                 </div>
