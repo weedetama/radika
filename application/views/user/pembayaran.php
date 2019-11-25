@@ -234,7 +234,7 @@
                 </div>
             <?php
             } else {
-                echo "<div class='text-center'><h4><i class='pe-7s-like'></i> Keranjang belanja anda masi kosong</h4></div>";
+                echo "<div class='text-center alert alert-warning'><h4><i class='pe-7s-like'></i> <strong>Keranjang belanja</strong> anda masi kosong</h4></div>";
             }
             ?>
         </div>

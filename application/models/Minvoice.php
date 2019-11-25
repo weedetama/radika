@@ -72,4 +72,14 @@ class Minvoice extends CI_Model
             return true;
         }
     }
+
+    public function tampilData()
+    {
+        $result = $this->db->get('tb_invoice');
+        if ($result->num_rows() > 0) {
+            return $result->result();
+        } else {
+            return false;
+        }
+    }
 }
