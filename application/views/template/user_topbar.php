@@ -6,7 +6,7 @@
                 <div class="col-md-4 col-sm-3 col-xs-6">
                     <div class="logo">
                         <a href="<?= base_url('home'); ?>">
-                            <img src="assets/img/logo/logo-black.png" alt="">
+                            <img src="<?= base_url() ?>assets/home/assets/img/logo/logo-black.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                                     <i class="pe-7s-user"></i>
                                 </a>
                             <?php } else { ?>
-                                <a href="">
+                                <a href="<?= base_url('auth/login') ?>">
                                     <i class="pe-7s-add-user"></i>
                                 </a>
                             <?php } ?>
