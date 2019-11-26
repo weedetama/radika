@@ -72,7 +72,7 @@
                                         </td>
                                         <td>
                                             <div class="mrg-top-15 text-center">
-                                                <?= $inv->id; ?>
+                                                inv#<?= $inv->id; ?>
                                             </div>
                                         </td>
                                         <td>
@@ -95,11 +95,6 @@
                                                 <?= $inv->tgl_pesan; ?>
                                             </div>
                                         </td>
-                                        <!-- <div>
-                                            <div class="relative mrg-top-15">
-                                                <?= $inv->jam_pesan; ?>
-                                            </div>
-                                        </div> -->
                                         <td>
                                             <div class="relative mrg-top-15">
                                                 <?= $inv->jam_pesan; ?>

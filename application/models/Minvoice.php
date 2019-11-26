@@ -83,7 +83,7 @@ class Minvoice extends CI_Model
         }
     }
 
-    public function IDInvoice($idinvoice)
+    public function detailInvoice($idinvoice)
     {
         $result = $this->db->where('id', $idinvoice)->limit(1)->get('tb_invoice');
         if ($result->num_rows() > 0) {
@@ -93,7 +93,7 @@ class Minvoice extends CI_Model
         }
     }
 
-    public function IDPesanan($idinvoice)
+    public function detailPesanan($idinvoice)
     {
         $result = $this->db->where('idinvoice', $idinvoice)->get('tb_pesanan');
         if ($result->num_rows() > 0) {

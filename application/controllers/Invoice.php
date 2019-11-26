@@ -29,8 +29,8 @@ class Invoice extends CI_Controller
 
     public function detail($idinvoice)
     {
-        $data['invoice'] = $this->Minvoice->IDInvoice($idinvoice);
-        $data['pesanan'] = $this->Minvoice->IDPesanan($idinvoice);
+        $data['invoice'] = $this->Minvoice->detailInvoice($idinvoice);
+        $data['pesanan'] = $this->Minvoice->detailPesanan($idinvoice);
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('template/topbar');
