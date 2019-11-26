@@ -82,4 +82,24 @@ class Minvoice extends CI_Model
             return false;
         }
     }
+
+    public function IDInvoice($idinvoice)
+    {
+        $result = $this->db->where('id', $idinvoice)->limit(1)->get('tb_invoice');
+        if ($result->num_rows() > 0) {
+            return $result->row();
+        } else {
+            return false;
+        }
+    }
+
+    public function IDPesanan($idinvoice)
+    {
+        $result = $this->db->where('idinvoice', $idinvoice)->get('tb_pesanan');
+        if ($result->num_rows() > 0) {
+            return $result->result();
+        } else {
+            return false;
+        }
+    }
 }

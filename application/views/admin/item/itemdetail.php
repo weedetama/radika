@@ -37,11 +37,6 @@
                                     </strong>
                                 </td>
                             </tr>
-                            <!-- <tr>
-                                <td>
-
-                                </td>
-                            </tr> -->
                         </table>
                         <?= anchor('item', '<div class="btn btn-sm btn-outline-info mt-3"> Kembali </div>') ?>
                         <?= anchor('item/edit/' . $b->id, '<div class="btn btn-sm btn-outline-success mt-3"> Edit </div>') ?>

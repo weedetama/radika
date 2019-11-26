@@ -18,15 +18,12 @@
                                 <!-- Begin Page Content -->
                                 <tr>
                                     <th># </th>
+                                    <th>Status</th>
+                                    <th class="text-center">Aksi</th>
+                                    <th>ID Invoice</th>
                                     <th>Nama Pemesan</th>
                                     <th>Alamat Pemesan</th>
                                     <th>Kota</th>
-                                    <!-- <th>Kode Pos</th> -->
-                                    <!-- <th>No. Telf</th> -->
-                                    <!-- <th>Pengiriman</th> -->
-                                    <!-- <th>Bank</th> -->
-                                    <!-- <th>Bukti Upload</th> -->
-                                    <!-- <th>Catatan</th> -->
                                     <th>Tanggal Pesan</th>
                                     <th>Waktu Pesan </th>
                                     <!-- <th>Batas Bayar</th> -->
@@ -42,6 +39,42 @@
                                                 <?= $i; ?>.
                                             </div>
                                         </th>
+                                        <td>
+                                            <div class="relative mrg-top-15">
+                                                <span class="status away"> </span>
+                                                <span class="pdd-left-20">Pending</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mrg-top-5 text-center">
+                                                <ul class="portlet-item navbar list-unstyled">
+                                                    <li class="dropdown inline-block">
+                                                        <a href="" class="btn btn-icon btn-flat dropdown-toggle btn-inverse btn-warning active" data-toggle="dropdown" aria-expanded="false">
+                                                            <i class="ei-menu-alt-2"></i>
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="<?= base_url(); ?>invoice/detail/<?= $inv->id; ?>">
+                                                                    <i class="ei-search-alt pdd-right-10 text-info"></i>
+                                                                    <span>Detail</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="">
+                                                                    <i class="ei-checked pdd-right-10 text-success"></i>
+                                                                    <span>Check</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="mrg-top-15 text-center">
+                                                <?= $inv->id; ?>
+                                            </div>
+                                        </td>
                                         <td>
                                             <div class="mrg-top-15">
                                                 <?= $inv->nama; ?>

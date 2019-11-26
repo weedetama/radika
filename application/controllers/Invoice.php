@@ -27,13 +27,14 @@ class Invoice extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    // public function detail($id_invoice)
-    // {
-    //     $data['invoice'] = $this->model_invoice->ambil_id_invoice($id_invoice);
-    //     $data['pesanan'] = $this->model_invoice->ambil_id_pesanan($id_invoice);
-    //     $this->load->view('templates_admin/header');
-    //     $this->load->view('templates_admin/sidebar');
-    //     $this->load->view('admin/detail_invoice', $data);
-    //     $this->load->view('templates_admin/footer');
-    // }
+    public function detail($idinvoice)
+    {
+        $data['invoice'] = $this->Minvoice->IDInvoice($idinvoice);
+        $data['pesanan'] = $this->Minvoice->IDPesanan($idinvoice);
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('template/topbar');
+        $this->load->view('admin/dinvoice', $data);
+        $this->load->view('template/footer');
+    }
 }
