@@ -1,7 +1,12 @@
 <div class="container-fluid">
+    <div class="page-title">
+        <h4>
+            <i class="ti-file text-warning mr-1"></i>Detail Invoice
+        </h4>
+    </div>
     <div class="card shadow mb-2">
         <div class="card-header">
-            <h5 class="m-0 font-weight-light">Detail Invoice | inv#<?= $invoice->id ?></h5>
+            <div class="btn btn-sm btn-outline-info mt-2">ID : inv#<?= $invoice->id ?></div>
         </div>
         <div class="card-body">
             <div class="row">
@@ -83,7 +88,21 @@
                         <tr>
                             <td>Bukti Upload</td>
                             <td>
-                                <img class="thumb-img" src="<?= base_url() . '/uploads/pembayaran/' . $invoice->buktifoto ?>">
+                                <div class="row masonry-grid">
+                                    <figure class="masonry-brick">
+                                        <a href="<?= base_url() . '/uploads/pembayaran/' . $invoice->buktifoto ?>" class="gallery-item" data-size="700x1000">
+                                            <img class="img-fluid" src="<?= base_url() . '/uploads/pembayaran/' . $invoice->buktifoto ?>" alt="">
+                                            <div class="overlay">
+                                                <div class="overlay-content">
+                                                    <div class="inline-block">
+                                                        <h4 class="caption-title">Bukti upload</h4>
+                                                        <span class="caption-date"><?= $invoice->tgl_pesan ?></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </figure>
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -96,5 +115,42 @@
             </div>
             <!-- endforeach -->
         </div>
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap">
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                        <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <!-- <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                    </button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                    </button> -->
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 </div>

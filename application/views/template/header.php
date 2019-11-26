@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/datatables/media/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/selectize/dist/css/selectize.default.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/dist/assets/css/sweetalert.css" />
+    <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/photoswipe/dist/photoswipe.css" />
+    <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/photoswipe/dist/default-skin/default-skin.css" />
+
 
     <!-- core css -->
     <link href="<?= base_url() ?>assets/dist/assets/css/ei-icon.css" rel="stylesheet">

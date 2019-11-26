@@ -34,6 +34,10 @@
 <script src="<?= base_url() ?>assets/bower_components/sweetalert/lib/sweet-alert.js"></script>
 <script src="<?= base_url() ?>assets/bower_components/noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
 <script src="<?= base_url() ?>assets/bower_components/selectize/dist/js/standalone/selectize.min.js"></script>
+<script src="<?= base_url() ?>assets/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+<script src="<?= base_url() ?>assets/bower_components/imagesloaded/imagesloaded.js"></script>
+<script src="<?= base_url() ?>assets/bower_components/photoswipe/dist/photoswipe.js"></script>
+<script src="<?= base_url() ?>assets/bower_components/photoswipe/dist/photoswipe-ui-default.min.js"></script>
 
 <script src="<?= base_url() ?>assets/dist/assets/js/app.min.js"></script>
 <script src="<?= base_url() ?>assets/dist/assets/js/myscript.js"></script>
@@ -42,6 +46,7 @@
 <script src="<?= base_url() ?>assets/dist/assets/js/dashboard/dashboard.js"></script>
 <script src="<?= base_url() ?>assets/dist/assets/js/table/data-table.js"></script>
 <script src="<?= base_url() ?>assets/dist/assets/js/ui-elements/notification.js"></script>
+<script src="<?= base_url() ?>assets/dist/assets/js/extras/gallery.js"></script>
 
 <script type="text/javascript">
     if (self == top) {
