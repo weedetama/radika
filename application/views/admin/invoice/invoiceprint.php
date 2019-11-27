@@ -24,10 +24,10 @@
                             <img class="img-responsive" src="<?= base_url(); ?>assets/dist/assets/images/logo/logo.png" alt="">
                             <address class="pdd-left-10 mrg-top-20">
                                 <b class="text-dark">PT. Tri Radika Karya</b><br>
-                                <!-- <span>9498 Harvard Street</span><br>
+                                <span>9498 Harvard Street</span><br>
                                 <span>Fairfield, Chicago Town 06824</span><br>
                                 <abbr class="text-dark" title="Phone">Phone:</abbr>
-                                <span>(123) 456-7890</span> -->
+                                <span>(123) 456-7890</span>
                             </address>
                         </div>
                         <div class="pull-right">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="row mrg-top-20">
                         <div class="col-md-9 col-sm-9">
-                            <h3 class="pdd-left-10 mrg-top-10">Invoice Untuk:</h3>
+                            <h3 class="pdd-left-10 mrg-top-10">Kepada :</h3>
                             <address class="pdd-left-10 mrg-top-10">
                                 <b class="text-dark"><?= $invoice->nama; ?></b><br>
                                 <span><?= $invoice->kodepos; ?> <?= $invoice->kota; ?> </span><br>

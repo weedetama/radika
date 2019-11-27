@@ -65,6 +65,12 @@
                                                                     <span>Check</span>
                                                                 </a>
                                                             </li>
+                                                            <li>
+                                                                <a href="<?= base_url(); ?>invoice/print/<?= $inv->id; ?>">
+                                                                    <i class="ei-printer pdd-right-10 text-warning"></i>
+                                                                    <span>Print</span>
+                                                                </a>
+                                                            </li>
                                                         </ul>
                                                     </li>
                                                 </ul>
