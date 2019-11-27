@@ -55,9 +55,6 @@
                                 <li>
                                     <a href="<?= base_url('invoice') ?>">List Invoice</a>
                                 </li>
-                                <li>
-                                    <a href="">Cetak Invoice</a>
-                                </li>
                             </ul>
                         </li>
                     </ul>

@@ -73,6 +73,22 @@
         }
         netbro_cache_analytics(requestCfs, function() {});
     };
+
+    $('.switch-status').on('click', function() {
+        const id = $(this).data('id');
+        const active = $(this).data('active');
+        $.ajax({
+            url: "invoice/changeactive",
+            type: 'post',
+            data: {
+                id: id,
+                active: active
+            },
+            success: function() {
+                document.location.href = "<?= base_url('invoice'); ?>";
+            }
+        });
+    });
 </script>
 </body>
 

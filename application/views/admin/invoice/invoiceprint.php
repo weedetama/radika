@@ -2,19 +2,13 @@
     <div class="container">
         <div class="card">
             <div class="pdd-vertical-5 pdd-horizon-10 border bottom print-invisible">
-                <ul class="list-unstyle list-inline text-right">
+                <ul class="list-unstyle list-inline text-center">
                     <li class="list-inline-item">
                         <a href="" class="btn text-gray text-hover display-block padding-10 no-mrg-btm" onclick="window.print();">
                             <i class="ti-printer text-info pdd-right-5"></i>
                             <b>Print</b>
                         </a>
                     </li>
-                    <!-- <li class="list-inline-item">
-                        <a href="#" class="text-gray text-hover display-block padding-10 no-mrg-btm">
-                            <i class="fa fa-file-pdf-o text-danger pdd-right-5"></i>
-                            <b>Export PDF</b>
-                        </a>
-                    </li> -->
                 </ul>
             </div>
             <div class="card-body">
@@ -39,8 +33,8 @@
                             <h3 class="pdd-left-10 mrg-top-10">Kepada :</h3>
                             <address class="pdd-left-10 mrg-top-10">
                                 <b class="text-dark"><?= $invoice->nama; ?></b><br>
-                                <span><?= $invoice->kodepos; ?> <?= $invoice->kota; ?> </span><br>
-                                <span><?= $invoice->alamat; ?></span>
+                                <span><?= $invoice->alamat; ?></span> <br>
+                                <span><?= $invoice->kota; ?> <?= $invoice->kodepos; ?> </span>
                             </address>
                         </div>
                         <div class="col-md-3 col-sm-3">

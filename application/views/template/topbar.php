@@ -13,9 +13,9 @@
                         <ul class="nav-right">
                             <li class="user-profile dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img class="profile-img img-fluid" src="<?= base_url() ?>assets/dist/assets/images/user.jpg" alt="">
+                                    <!-- <img class="profile-img img-fluid" src="<?= base_url() ?>assets/dist/assets/images/user.jpg" alt=""> -->
                                     <div class="user-info">
-                                        <span class="name pdd-right-5">Nate Leong</span>
+                                        <span class="name pdd-right-5"><?= $this->session->userdata('username') ?></span>
                                         <i class="ti-angle-down font-size-10"></i>
                                     </div>
                                 </a>

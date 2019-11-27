@@ -26,6 +26,7 @@
                                     <th>Kota</th>
                                     <th>Tanggal Pesan</th>
                                     <th>Waktu Pesan </th>
+                                    <th class="text-center"></th>
                                     <!-- <th>Batas Bayar</th> -->
                                 </tr>
                             </thead>
@@ -41,8 +42,14 @@
                                         </th>
                                         <td>
                                             <div class="relative mrg-top-15">
-                                                <span class="status away"> </span>
-                                                <span class="pdd-left-20">Pending</span>
+                                                <?php
+                                                    $status = $inv->status;
+                                                    if ($status == 0) {
+                                                        echo "<span class='status away'></span><span class='pdd-left-20'>Pending</span>";
+                                                    } else {
+                                                        echo "<span class='status online'></span><span class='pdd-left-20'>Aprove</span>";
+                                                    }
+                                                    ?>
                                             </div>
                                         </td>
                                         <td>
@@ -60,14 +67,8 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="">
-                                                                    <i class="ei-checked pdd-right-10 text-success"></i>
-                                                                    <span>Check</span>
-                                                                </a>
-                                                            </li>
-                                                            <li>
                                                                 <a href="<?= base_url(); ?>invoice/print/<?= $inv->id; ?>">
-                                                                    <i class="ei-printer pdd-right-10 text-warning"></i>
+                                                                    <i class="ei-printer pdd-right-10 text-success"></i>
                                                                     <span>Print</span>
                                                                 </a>
                                                             </li>
@@ -104,6 +105,12 @@
                                         <td>
                                             <div class="relative mrg-top-15">
                                                 <?= $inv->jam_pesan; ?>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="toggle-checkbox toggle-success checkbox-inline toggle-sm mrg-top-20">
+                                                <input id="toggle-switch<?= $inv->id; ?>" class="switch-status" <?= status($inv->id); ?> data-id="<?= $inv->id; ?>" data-active="<?= $inv->status; ?>" type="checkbox">
+                                                <label for="toggle-switch<?= $inv->id; ?>"></label>
                                             </div>
                                         </td>
                                     </tr>

@@ -48,4 +48,24 @@ class Invoice extends CI_Controller
         $this->load->view('admin/invoice/invoiceprint', $data);
         $this->load->view('template/footer');
     }
+
+    public function changeactive()
+    {
+        $id = $this->input->post('id');
+        $data1 = [
+            'status' => 1
+        ];
+        $data = [
+            'status' => 0
+        ];
+
+        $result = $this->db->get_where('tb_invoice', ['id' => $id])->row_array();
+        if ($result['status'] == 0) {
+            $this->db->where('id', $id);
+            $this->db->update('tb_invoice', $data1);
+        } else {
+            $this->db->where('id', $id);
+            $this->db->update('tb_invoice', $data);
+        }
+    }
 }
