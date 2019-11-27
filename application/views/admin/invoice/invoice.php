@@ -66,12 +66,12 @@
                                                                     <span>Detail</span>
                                                                 </a>
                                                             </li>
-                                                            <li>
-                                                                <a href="<?= base_url(); ?>invoice/print/<?= $inv->id; ?>">
-                                                                    <i class="ei-printer pdd-right-10 text-success"></i>
-                                                                    <span>Print</span>
-                                                                </a>
-                                                            </li>
+                                                            <?php
+                                                                $status = $inv->status;
+                                                                if ($status == 0) { } else {
+                                                                    echo "<li><a href='<?= base_url(); ?>invoice/print/<?= $inv->id; ?>'><i class='ei-printer pdd-right-10 text-success'></i><span>Print</span></a></li>";
+                                                                }
+                                                                ?>
                                                         </ul>
                                                     </li>
                                                 </ul>

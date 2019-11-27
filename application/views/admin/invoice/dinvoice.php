@@ -112,11 +112,15 @@
                     </table>
                     <hr>
                     <div class="text-right">
-                        <?= anchor('invoice', '<div class="btn btn-sm btn-outline-info mt-3"> Kembali </div>') ?>
-                        <?= anchor('invoice/print/' . $invoice->id, '<div class="btn btn-sm btn-outline-success mt-3"> Print </div>') ?>
+                        <a href="<?= base_url('invoice'); ?>" class="btn btn-inverse btn-info mt-3"><i class="ti-back-left pdd-right-5"></i><span>Back</span></a>
+                        <?php
+                        $status = $invoice->status;
+                        if ($status == 0) { } else {
+                            echo "<a href='<?= base_url(); ?>invoice/print/<?= $invoice->id; ?>' class='btn btn-inverse btn-success mt-3'><i class='ti-printer pdd-right-5'></i><span>Print</span></a>";
+                        }
+                        ?>
                     </div>
                 </div>
-
             </div>
             <!-- endforeach -->
         </div>
