@@ -23,7 +23,7 @@ class Invoice extends CI_Controller
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('template/topbar');
-        $this->load->view('admin/invoice', $data);
+        $this->load->view('admin/invoice/invoice', $data);
         $this->load->view('template/footer');
     }
 
@@ -34,7 +34,18 @@ class Invoice extends CI_Controller
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
         $this->load->view('template/topbar');
-        $this->load->view('admin/dinvoice', $data);
+        $this->load->view('admin/invoice/dinvoice', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function print($idinvoice)
+    {
+        $data['invoice'] = $this->Minvoice->detailInvoice($idinvoice);
+        $data['pesanan'] = $this->Minvoice->detailPesanan($idinvoice);
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('template/topbar');
+        $this->load->view('admin/invoice/invoiceprint', $data);
         $this->load->view('template/footer');
     }
 }

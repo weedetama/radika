@@ -11,51 +11,6 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th class="text-left">Nama Barang</th>
-                                <th class="text-center">Jumlah Pesanan</th>
-                                <th class="text-right">Harga Satuan</th>
-                                <th class="text-right">Sub Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $i = 1; ?>
-                            <?php
-                            $total = 0;
-                            foreach ($pesanan as $pesan) :
-                                $subtotal = $pesan->jumlah * $pesan->harga;
-                                $total += $subtotal;
-                                ?>
-                                <tr>
-                                    <th>
-                                        <?= $i; ?>.
-                                    </th>
-                                    <td><?= $pesan->namabarang ?></td>
-                                    <td class="text-center"><?= $pesan->jumlah ?></td>
-                                    <td class="text-right"><?= number_format($pesan->harga, 0, ',', '.') ?></td>
-                                    <td class="text-right"><?= number_format($subtotal, 0, ',', '.') ?></td>
-                                </tr>
-                                <?php $i++; ?>
-                            <?php endforeach; ?>
-                            <tr>
-                                <td colspan="4" class="text-right">
-                                    <strong>
-                                        Total :
-                                    </strong>
-                                </td>
-                                <td class="text-right">
-                                    <strong>
-                                        Rp. <?= number_format($total, 0, ',', '.') ?>,-
-                                    </strong>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
                     <table class="table table-hover">
                         <tr>
                             <td>Nama Pemesan</td>
@@ -110,8 +65,58 @@
                             <td><strong><?= $invoice->catatan ?></strong></td>
                         </tr>
                     </table>
-                    <?= anchor('invoice', '<div class="btn btn-sm btn-outline-info mt-3"> Kembali </div>') ?>
                 </div>
+                <div class="col-md-6">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th class="text-left">Nama Barang</th>
+                                <th class="text-center">Jumlah Pesanan</th>
+                                <th class="text-right">Harga Satuan</th>
+                                <th class="text-right">Sub Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1; ?>
+                            <?php
+                            $total = 0;
+                            foreach ($pesanan as $pesan) :
+                                $subtotal = $pesan->jumlah * $pesan->harga;
+                                $total += $subtotal;
+                                ?>
+                                <tr>
+                                    <th>
+                                        <?= $i; ?>.
+                                    </th>
+                                    <td><?= $pesan->namabarang ?></td>
+                                    <td class="text-center"><?= $pesan->jumlah ?></td>
+                                    <td class="text-right"><?= number_format($pesan->harga, 0, ',', '.') ?></td>
+                                    <td class="text-right"><?= number_format($subtotal, 0, ',', '.') ?></td>
+                                </tr>
+                                <?php $i++; ?>
+                            <?php endforeach; ?>
+                            <tr>
+                                <td colspan="4" class="text-right">
+                                    <strong>
+                                        Total :
+                                    </strong>
+                                </td>
+                                <td class="text-right">
+                                    <strong>
+                                        Rp. <?= number_format($total, 0, ',', '.') ?>,-
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <div class="text-right">
+                        <?= anchor('invoice', '<div class="btn btn-sm btn-outline-info mt-3"> Kembali </div>') ?>
+                        <?= anchor('invoice/print/' . $invoice->id, '<div class="btn btn-sm btn-outline-success mt-3"> Print </div>') ?>
+                    </div>
+                </div>
+
             </div>
             <!-- endforeach -->
         </div>
