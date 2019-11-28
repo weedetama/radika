@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2019 at 11:47 PM
+-- Generation Time: Nov 28, 2019 at 02:52 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -43,10 +43,10 @@ CREATE TABLE `tb_barang` (
 --
 
 INSERT INTO `tb_barang` (`id`, `nama`, `keterangan`, `kategori`, `harga`, `stok`, `gambar`) VALUES
-(73, 'Laptop', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quo tempora laboriosam explicabo vitae nobis ut amet aspernatur sequi illo eaque eius, tenetur quos architecto omnis aliquid laborum mollitia voluptas.\r\n', 'Pertanian', 6000000, 2, 'laptop.jpg'),
-(74, 'Hp', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quo tempora laboriosam explicabo vitae nobis ut amet aspernatur sequi illo eaque eius, tenetur quos architecto omnis aliquid laborum mollitia voluptas.\r\n', 'Pertanian', 2500000, 5, 'hp.jpg'),
-(75, 'Sepatu', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quo tempora laboriosam explicabo vitae nobis ut amet aspernatur sequi illo eaque eius, tenetur quos architecto omnis aliquid laborum mollitia voluptas.\r\n', 'Peternakan', 300000, 15, 'sepatu.jpg'),
-(76, 'Kamera', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quo tempora laboriosam explicabo vitae nobis ut amet aspernatur sequi illo eaque eius, tenetur quos architecto omnis aliquid laborum mollitia voluptas.\r\n', 'Peternakan', 5000000, 22, 'kamera.jpg');
+(73, 'Laptop', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quo tempora laboriosam explicabo vitae nobis ut amet aspernatur sequi illo eaque eius, tenetur quos architecto omnis aliquid laborum mollitia voluptas.\r\n', 'Pertanian', 6000, 20, 'laptop.jpg'),
+(74, 'Hp', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quo tempora laboriosam explicabo vitae nobis ut amet aspernatur sequi illo eaque eius, tenetur quos architecto omnis aliquid laborum mollitia voluptas.\r\n', 'Pertanian', 2500, 20, 'hp.jpg'),
+(75, 'Sepatu', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quo tempora laboriosam explicabo vitae nobis ut amet aspernatur sequi illo eaque eius, tenetur quos architecto omnis aliquid laborum mollitia voluptas.\r\n', 'Peternakan', 300000, 12, 'sepatu.jpg'),
+(76, 'Kamera', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quo tempora laboriosam explicabo vitae nobis ut amet aspernatur sequi illo eaque eius, tenetur quos architecto omnis aliquid laborum mollitia voluptas.\r\n', 'Peternakan', 5000000, 14, 'kamera.jpg');
 
 -- --------------------------------------------------------
 
@@ -70,6 +70,80 @@ INSERT INTO `tb_category` (`id`, `category`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_invoice`
+--
+
+CREATE TABLE `tb_invoice` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(70) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `kota` varchar(255) NOT NULL,
+  `kodepos` varchar(30) NOT NULL,
+  `notelf` varchar(50) NOT NULL,
+  `pengiriman` varchar(30) NOT NULL,
+  `bank` varchar(30) NOT NULL,
+  `buktifoto` varchar(30) NOT NULL,
+  `catatan` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `tgl_pesan` date NOT NULL,
+  `jam_pesan` time NOT NULL,
+  `tgl_bayar` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_invoice`
+--
+
+INSERT INTO `tb_invoice` (`id`, `nama`, `alamat`, `kota`, `kodepos`, `notelf`, `pengiriman`, `bank`, `buktifoto`, `catatan`, `status`, `tgl_pesan`, `jam_pesan`, `tgl_bayar`) VALUES
+(10, 'Adhi Widiananda Laktama', 'Jl. Liman mukti utara 1/452 ', 'Semarang', '50192', '082227862992', 'JNE', 'MANDIRI', '5daa09cf6844a.png', 'Tidak ada catatan khusus !', 1, '2019-11-25', '22:29:15', '2019-11-26 22:29:15'),
+(11, 'Chinossa Ayunatusyifa', 'Jl. Tlogosari V ', 'Semarang', '50192', '082227862992', 'Grab', 'MANDIRI', '5daa09c3ae339.jpg', 'tidak ada catatan khusus', 1, '2019-11-26', '15:24:38', '2019-11-27 15:24:38'),
+(12, 'Gianita', 'Jl. tlogo raya', 'Semarang', '50192', '082227862992', 'POS INDONESIA', 'MANDIRI', 'buktibayar.jpg', 'tidak ada catatan khusus', 1, '2019-11-26', '17:47:57', '2019-11-27 17:47:57'),
+(13, 'Maulana Jamianto', 'Tembalang V', 'Semarang', '50123', '082227862992', 'TIKI', 'BCA', 'buktibayar1.jpg', 'tidak ada catatan', 1, '2019-11-28', '03:00:20', '2019-11-29 03:00:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_pesanan`
+--
+
+CREATE TABLE `tb_pesanan` (
+  `id` int(11) NOT NULL,
+  `idinvoice` int(11) NOT NULL,
+  `idbarang` int(11) NOT NULL,
+  `namabarang` varchar(128) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `harga` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_pesanan`
+--
+
+INSERT INTO `tb_pesanan` (`id`, `idinvoice`, `idbarang`, `namabarang`, `jumlah`, `harga`) VALUES
+(5, 10, 75, 'Sepatu', 1, 300000),
+(6, 11, 76, 'Kamera', 2, 5000000),
+(7, 11, 74, 'Hp', 1, 2500000),
+(8, 11, 75, 'Sepatu', 1, 300000),
+(9, 12, 76, 'Kamera', 2, 5000000),
+(10, 13, 73, 'Laptop', 1, 6000000),
+(11, 13, 74, 'Hp', 1, 2500000),
+(12, 13, 75, 'Sepatu', 1, 300000),
+(13, 13, 76, 'Kamera', 1, 5000000);
+
+--
+-- Triggers `tb_pesanan`
+--
+DELIMITER $$
+CREATE TRIGGER `pesanan_penjualan` AFTER INSERT ON `tb_pesanan` FOR EACH ROW BEGIN
+	UPDATE tb_barang SET stok = stok-NEW.jumlah
+    WHERE id = NEW.idbarang;
+END
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_user`
 --
 
@@ -86,9 +160,8 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id`, `nama`, `username`, `password`, `role_id`) VALUES
-(1, 'admin', 'admin', 'admin', 1),
-(2, 'widi', 'widi', 'widi', 2),
-(3, 'chinossa ayunatusyifa', 'chinossa', 'ossa', 2);
+(1, 'Adhi Widiananda', 'admin', 'admin', 1),
+(2, 'widi', 'widi', 'widi', 2);
 
 --
 -- Indexes for dumped tables
@@ -104,6 +177,18 @@ ALTER TABLE `tb_barang`
 -- Indexes for table `tb_category`
 --
 ALTER TABLE `tb_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_invoice`
+--
+ALTER TABLE `tb_invoice`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_pesanan`
+--
+ALTER TABLE `tb_pesanan`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -129,10 +214,22 @@ ALTER TABLE `tb_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
+-- AUTO_INCREMENT for table `tb_invoice`
+--
+ALTER TABLE `tb_invoice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `tb_pesanan`
+--
+ALTER TABLE `tb_pesanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
