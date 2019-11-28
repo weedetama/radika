@@ -194,7 +194,7 @@
                                                 </a>
                                             </div>
                                             <div class="price-up-down">
-                                                <span class="sale-new">sale</span>
+                                                <span class="sale-new">Habis</span>
                                             </div>
                                             <div class="button-group">
                                                 <a href="#" title="Add to Cart">

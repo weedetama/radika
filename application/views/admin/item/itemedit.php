@@ -62,7 +62,7 @@
                                 </div>
                             </label>
                             <div class="col-md-10">
-                                <input type="text" class="form-control" id="harga" name="harga" placeholder="harga" value="<?= number_format($b->harga, 0, ',', '.') ?>" required>
+                                <input type="text" class="form-control" id="harga" name="harga" placeholder="harga" value="<?= $b->harga; ?>" required>
                             </div>
                         </div>
                         <!-- Stok -->

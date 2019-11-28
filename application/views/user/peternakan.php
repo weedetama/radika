@@ -66,13 +66,24 @@
                                                                     <i class="pe-7s-look"></i>
                                                                 </a>
                                                             </div>
-                                                            <?php if ($this->session->userdata('username')) { ?>
-                                                                <div class="button-group">
-                                                                    <a href="<?= base_url(); ?>produk/add/<?= $b->id; ?>" title="Add to Cart">
-                                                                        <i class="pe-7s-cart"></i>
-                                                                        add to cart
-                                                                    </a>
-                                                                </div>
+                                                            <?php
+                                                                $soldout = $b->stok;
+                                                                if ($soldout == 0) { ?>
+                                                                <div class='price-up-down'><span class='sale-new'>Habis</span></div>
+                                                            <?php } ?>
+                                                            <?php
+                                                                $soldout = $b->stok;
+                                                                $userdata = $this->session->userdata('username');
+                                                                if ($userdata) {
+                                                                    if ($soldout == 0) { ?>
+                                                                <?php } else { ?>
+                                                                    <div class="button-group">
+                                                                        <a href="<?= base_url(); ?>produk/add/<?= $b->id; ?>" title="Add to Cart">
+                                                                            <i class="pe-7s-cart"></i>
+                                                                            add to cart
+                                                                        </a>
+                                                                    </div>
+                                                                <?php } ?>
                                                             <?php } ?>
                                                         </div>
                                                         <div class="shop-text-all">
@@ -162,11 +173,17 @@
                                                                                                                         <i class="pe-7s-back"></i>
                                                                                                                         close
                                                                                                                     </a>
-                                                                                                                    <?php if ($this->session->userdata('username')) { ?>
-                                                                                                                        <a href="<?= base_url(); ?>produk/add/<?= $b->id; ?>">
-                                                                                                                            <i class="pe-7s-cart"></i>
-                                                                                                                            add to cart
-                                                                                                                        </a>
+                                                                                                                    <?php
+                                                                                                                        $soldout = $b->stok;
+                                                                                                                        $userdata = $this->session->userdata('username');
+                                                                                                                        if ($userdata) {
+                                                                                                                            if ($soldout == 0) { ?>
+                                                                                                                        <?php } else {  ?>
+                                                                                                                            <a href="<?= base_url(); ?>produk/add/<?= $b->id; ?>">
+                                                                                                                                <i class="pe-7s-cart"></i>
+                                                                                                                                add to cart
+                                                                                                                            </a>
+                                                                                                                        <?php } ?>
                                                                                                                     <?php } ?>
                                                                                                                 </div>
                                                                                                             </div>
