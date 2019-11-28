@@ -17,15 +17,15 @@
                             <thead>
                                 <!-- Begin Page Content -->
                                 <tr>
-                                    <th># </th>
-                                    <th>Status</th>
+                                    <th class="text-center"># </th>
+                                    <th class="text-center">Status</th>
                                     <th class="text-center">Aksi</th>
-                                    <th>ID Invoice</th>
-                                    <th>Nama Pemesan</th>
-                                    <th>Alamat Pemesan</th>
-                                    <th>Kota</th>
-                                    <th>Tanggal Pesan</th>
-                                    <th>Waktu Pesan </th>
+                                    <th class="text-center">Invoice</th>
+                                    <th class="text-center">Nama</th>
+                                    <th class="text-center">Alamat</th>
+                                    <th class="text-center">Kota</th>
+                                    <th class="text-center">Tanggal</th>
+                                    <th class="text-center">Waktu </th>
                                     <th class="text-center"></th>
                                     <!-- <th>Batas Bayar</th> -->
                                 </tr>
@@ -66,12 +66,14 @@
                                                                     <span>Detail</span>
                                                                 </a>
                                                             </li>
-                                                            <?php
-                                                                $status = $inv->status;
-                                                                if ($status == 0) { } else {
-                                                                    echo "<li><a href='<?= base_url(); ?>invoice/print/<?= $inv->id; ?>'><i class='ei-printer pdd-right-10 text-success'></i><span>Print</span></a></li>";
-                                                                }
-                                                                ?>
+                                                            <li>
+                                                                <?php
+                                                                    $status = $inv->status;
+                                                                    if ($status == 1) {
+                                                                        echo anchor('invoice/print/' . $inv->id, '<i class="ei-printer pdd-right-15 text-success"></i><span>Print</span>');
+                                                                    }
+                                                                    ?>
+                                                            </li>
                                                         </ul>
                                                     </li>
                                                 </ul>
