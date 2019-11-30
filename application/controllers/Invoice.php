@@ -20,31 +20,34 @@ class Invoice extends CI_Controller
     public function index()
     {
         $data['invoice'] = $this->Minvoice->tampilData();
+        $data['notif'] = $this->Mnotif->Notification();
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
-        $this->load->view('template/topbar');
+        $this->load->view('template/topbar', $data);
         $this->load->view('admin/invoice/invoice', $data);
         $this->load->view('template/footer');
     }
 
     public function detail($idinvoice)
     {
+        $data['notif'] = $this->Mnotif->Notification();
         $data['invoice'] = $this->Minvoice->detailInvoice($idinvoice);
         $data['pesanan'] = $this->Minvoice->detailPesanan($idinvoice);
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
-        $this->load->view('template/topbar');
+        $this->load->view('template/topbar', $data);
         $this->load->view('admin/invoice/dinvoice', $data);
         $this->load->view('template/footer');
     }
 
     public function print($idinvoice)
     {
+        $data['notif'] = $this->Mnotif->Notification();
         $data['invoice'] = $this->Minvoice->detailInvoice($idinvoice);
         $data['pesanan'] = $this->Minvoice->detailPesanan($idinvoice);
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
-        $this->load->view('template/topbar');
+        $this->load->view('template/topbar', $data);
         $this->load->view('admin/invoice/invoiceprint', $data);
         $this->load->view('template/footer');
     }
@@ -67,5 +70,12 @@ class Invoice extends CI_Controller
             $this->db->where('id', $id);
             $this->db->update('tb_invoice', $data);
         }
+    }
+
+    public function delete($id)
+    {
+        $this->Minvoice->hapusInvoice($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data barang berhasil dihapus</div>');
+        redirect('invoice');
     }
 }

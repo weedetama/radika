@@ -997,9 +997,9 @@
     <!-- shop area end -->
 
     <!-- blog area start -->
-    <div class="blog-area pb-70">
+    <div class="blog-area pb-70 gray-bg">
         <div class="container">
-            <div class="section-title text-center mb-50">
+            <div class="section-title text-center mb-50 pt-30">
                 <h2>
                     latest news
                     <i class="fa fa-pencil"></i>

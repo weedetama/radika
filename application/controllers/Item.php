@@ -21,7 +21,7 @@ class Item extends CI_Controller
     public function index()
     {
         $data['title'] = ' Data Barang';
-
+        $data['notif'] = $this->Mnotif->Notification();
         $data['subCategory'] = $this->Mitem->getKategori();
         $data['category'] = $this->db->get('tb_category')->result();
         $data['barang'] = $this->Mitem->tampilBarang()->result();
@@ -38,7 +38,7 @@ class Item extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->load->view('template/header');
             $this->load->view('template/sidebar');
-            $this->load->view('template/topbar');
+            $this->load->view('template/topbar', $data);
             $this->load->view('admin/item/items', $data);
             $this->load->view('template/footer');
         } else {
@@ -76,7 +76,7 @@ class Item extends CI_Controller
     public function edit($id)
     {
         $data['title'] = 'Edit Barang';
-
+        $data['notif'] = $this->Mnotif->Notification();
         $where = array('id' => $id);
         $data['subCategory'] = $this->Mitem->getKategori();
         $data['category'] = $this->db->get('tb_category')->result();
@@ -84,7 +84,7 @@ class Item extends CI_Controller
 
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
-        $this->load->view('template/topbar');
+        $this->load->view('template/topbar', $data);
         $this->load->view('admin/item/itemedit', $data);
         $this->load->view('template/footer');
     }
@@ -129,10 +129,11 @@ class Item extends CI_Controller
     // Controller Detail
     public function detail($id)
     {
+        $data['notif'] = $this->Mnotif->Notification();
         $data['barang'] = $this->Mitem->detailBarang($id);
         $this->load->view('template/header');
         $this->load->view('template/sidebar');
-        $this->load->view('template/topbar');
+        $this->load->view('template/topbar', $data);
         $this->load->view('admin/item/itemdetail', $data);
         $this->load->view('template/footer');
     }

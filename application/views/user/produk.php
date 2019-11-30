@@ -94,14 +94,9 @@
                                                                 </div>
                                                             </div>
                                                             <div class="price-ratting fix">
-                                                                <span class="price f-left">
-                                                                    <span class="new">
-                                                                        Rp. <?= number_format($b->harga, 0, ',', '.') ?>
-                                                                    </span>
-                                                                </span>
                                                                 <span class="price f-right">
                                                                     <span class="new">
-                                                                        Stok : <?= $b->stok; ?>
+                                                                        Rp. <?= number_format($b->harga, 0, ',', '.') ?>
                                                                     </span>
                                                                 </span>
                                                             </div>
@@ -153,7 +148,14 @@
                                                                                                                 <ul>
                                                                                                                     <li>
                                                                                                                         <span>Stok</span><strong>:</strong>
-                                                                                                                        <?= $b->stok; ?>
+                                                                                                                        <?php
+                                                                                                                            $stok = $b->stok;
+                                                                                                                            if ($stok >= 1) {
+                                                                                                                                echo " Tersedia";
+                                                                                                                            } else {
+                                                                                                                                echo " Habis";
+                                                                                                                            }
+                                                                                                                            ?>
                                                                                                                     </li>
                                                                                                                     <li><span>Kategori</span><strong>:</strong>
                                                                                                                         <?= $b->kategori; ?>

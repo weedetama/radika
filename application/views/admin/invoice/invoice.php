@@ -74,6 +74,12 @@
                                                                     }
                                                                     ?>
                                                             </li>
+                                                            <li>
+                                                                <a href="" data-toggle="modal" data-target="#deleteModal<?= $inv->id; ?>">
+                                                                    <i class=" ei-delete pdd-right-10 text-danger"></i>
+                                                                    <span>Delete</span>
+                                                                </a>
+                                                            </li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -81,7 +87,9 @@
                                         </td>
                                         <td>
                                             <div class="mrg-top-15 text-center">
-                                                inv#<?= $inv->id; ?>
+                                                <a href="<?= base_url(); ?>invoice/detail/<?= $inv->id; ?>">
+                                                    inv#<?= $inv->id; ?>
+                                                    <a>
                                             </div>
                                         </td>
                                         <td>
@@ -101,7 +109,9 @@
                                         </td>
                                         <td>
                                             <div class="relative mrg-top-15">
-                                                <?= $inv->tgl_pesan; ?>
+                                                <?php
+                                                    $tanggal = $inv->tgl_pesan; ?>
+                                                <?= date($tanggal); ?>
                                             </div>
                                         </td>
                                         <td>
@@ -117,14 +127,14 @@
                                         </td>
                                     </tr>
                                     <?php $i++; ?>
-                                    <!-- Modal Delete Barang -->
-                                    <!-- <div class="modal fade" id="deleteModal<?= $inv->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <!-- Modal Delete Invoice -->
+                                    <div class="modal fade" id="deleteModal<?= $inv->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-sm" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header text-center">
                                                     <h5 id="exampleModalLabel">
                                                         <p class="text-danger">Apakah anda akan menghapus</p>
-                                                        <strong><?= $inv->nama; ?></strong> ?
+                                                        <strong>inv#<?= $inv->id; ?></strong> ?
                                                     </h5>
                                                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true"></span>
@@ -132,11 +142,11 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button class="btn btn-outline-info" type="button" data-dismiss="modal">Tidak</button>
-                                                    <a class="btn btn-outline-success" href="<?= base_url(); ?>item/delete/<?= $inv->id; ?>">Ya</a>
+                                                    <a class="btn btn-outline-success" href="<?= base_url(); ?>invoice/delete/<?= $inv->id; ?>">Ya</a>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <!-- End Delete Barang -->
                                 <?php endforeach; ?>
                             </tbody>

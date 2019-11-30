@@ -57,6 +57,22 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" href="javascript:void(0);">
+                                <span class="icon-holder">
+                                    <i class="ei-left-align"></i>
+                                </span>
+                                <span class="title">News</span>
+                                <span class="arrow">
+                                    <i class="ti-angle-right"></i>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="<?= base_url() ?>">List News</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

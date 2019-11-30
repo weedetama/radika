@@ -20,13 +20,13 @@
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li>
+                                    <!-- <li>
                                         <a href="#">
                                             <i class="ti-user pdd-right-10"></i>
                                             <span>Profile</span>
                                         </a>
-                                    </li>
-                                    <li role="separator" class="divider"></li>
+                                    </li> -->
+                                    <!-- <li role="separator" class="divider"></li> -->
                                     <li>
                                         <a href="<?= base_url('auth/logout') ?>">
                                             <i class="ti-power-off pdd-right-10"></i>
@@ -36,7 +36,12 @@
                                 </ul>
                             </li>
                             <li class="notifications dropdown">
-                                <span class="counter">200</span>
+                                <span class="counter">
+                                    <?php
+                                    $notifikasi = $notif->num_rows();
+                                    ?>
+                                    <?= $notifikasi; ?>
+                                </span>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="ti-bell"></i>
                                 </a>
@@ -48,77 +53,40 @@
                                     <li>
                                         <ul class="list-info overflow-y-auto relative scrollable">
                                             <li>
-                                                <a href="#">
-                                                    <img class="thumb-img" src="assets/images/avatars/thumb-5.jpg" alt="">
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Jennifer
-                                                                Watkins</span>
-                                                            <span class="text-gray">commented on your <span class="text-dark">post</span></span>
-                                                        </span>
-                                                        <span class="sub-title">5 mins ago</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="thumb-img" src="assets/images/avatars/thumb-4.jpg" alt="">
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Samuel Field</span>
-                                                            <span class="text-gray">likes your <span class="text-dark">photo</span></span>
-                                                        </span>
-                                                        <span class="sub-title">8 hours ago</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="thumb-img bg-primary">
-                                                        <span class="text-white">M</span>
-                                                    </span>
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Michael
-                                                                Birch</span>
-                                                            <span class="text-gray">likes your <span class="text-dark">photo</span></span>
-                                                        </span>
-                                                        <span class="sub-title">5 hours ago</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="thumb-img bg-success">
-                                                        <span class="text-white"><i class="fa fa-paper-plane-o"></i></span>
-                                                    </span>
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Message sent</span>
-                                                        </span>
-                                                        <span class="sub-title">8 hours ago</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="thumb-img bg-info">
-                                                        <span class="text-white"><i class="ti-user"></i></span>
-                                                    </span>
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Admin</span>
-                                                            <span class="text-gray">Welcome on board</span>
-                                                        </span>
-                                                        <span class="sub-title">8 hours ago</span>
-                                                    </div>
-                                                </a>
+                                                <?php
+                                                if ($notifikasi > 0) { ?>
+                                                    <a href="<?= base_url('invoice') ?>">
+                                                        <div class="info">
+                                                            <span class="title">
+                                                                <span class="font-size-14 text-semibold">
+                                                                    <?= $notifikasi; ?> Pesanan
+                                                                </span>
+                                                                <span class="text-gray">
+                                                                    yang masih
+                                                                    <span class="text-dark">
+                                                                        pending
+                                                                    </span>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </a>
+                                                <?php } else { ?>
+                                                    <a href="">
+                                                        <div class="info">
+                                                            <span class="title">
+                                                                <span class="font-size-14 text-semibold">
+                                                                    Tidak ada pesanan !
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </a>
+                                                <?php } ?>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="notice-footer">
                                         <span>
-                                            <a href="#" class="text-gray">Check all notifications <i class="ei-right-chevron pdd-left-5 font-size-10"></i></a>
+                                            <a href="<?= base_url('invoice') ?>" class="text-gray">Cek Invoice <i class="ei-right-chevron pdd-left-5 font-size-10"></i></a>
                                         </span>
                                     </li>
                                 </ul>

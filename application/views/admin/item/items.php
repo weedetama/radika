@@ -76,7 +76,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#" data-toggle="modal" data-target="#deleteModal<?= $b->id; ?>">
+                                                                <a href="" data-toggle="modal" data-target="#deleteModal<?= $b->id; ?>">
                                                                     <i class=" ei-delete pdd-right-10 text-danger"></i>
                                                                     <span>Delete</span>
                                                                 </a>

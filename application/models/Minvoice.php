@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Minvoice extends CI_Model
 {
+    // Input Data invoice pada user
     public function index()
     {
         date_default_timezone_set('Asia/Jakarta');
@@ -73,6 +74,7 @@ class Minvoice extends CI_Model
         }
     }
 
+    // read data Invoice
     public function tampilData()
     {
         $result = $this->db->get('tb_invoice');
@@ -83,6 +85,7 @@ class Minvoice extends CI_Model
         }
     }
 
+    //model detail invoice
     public function detailInvoice($idinvoice)
     {
         $result = $this->db->where('id', $idinvoice)->limit(1)->get('tb_invoice');
@@ -93,6 +96,7 @@ class Minvoice extends CI_Model
         }
     }
 
+    //model detail pesanan 
     public function detailPesanan($idinvoice)
     {
         $result = $this->db->where('idinvoice', $idinvoice)->get('tb_pesanan');
@@ -101,5 +105,11 @@ class Minvoice extends CI_Model
         } else {
             return false;
         }
+    }
+    //model hapus pesanan
+    public function hapusInvoice($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('tb_invoice');
     }
 }

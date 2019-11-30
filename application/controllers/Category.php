@@ -7,6 +7,7 @@ class Category extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mcategory');
+        $this->load->model('Mnotif');
         if ($this->session->userdata('role_id') != '1') {
             $this->session->set_flashdata('pesan', ' <div class="alert alert-warning" role="alert">
                 Anda belum <strong>login!</strong>
@@ -21,16 +22,16 @@ class Category extends CI_Controller
     public function index()
     {
         $data['title'] = 'Kategori';
-
+        $data['notif'] = $this->Mnotif->Notification();
         $data['category'] = $this->db->get('tb_category')->result_array();
         $data['categoryy'] = $this->db->get('tb_category')->row_array();
 
         $this->form_validation->set_rules('category', 'Category', 'required', ['required' => 'Kategori wajib di isi']);
         if ($this->form_validation->run() == false) {
-            $this->load->view('template/header', $data);
+            $this->load->view('template/header');
             $this->load->view('template/sidebar');
-            $this->load->view('template/topbar');
-            $this->load->view('admin/item/category');
+            $this->load->view('template/topbar', $data);
+            $this->load->view('admin/item/category', $data);
             $this->load->view('template/footer');
         } else {
             $this->Mcategory->tambahCategory();
@@ -42,14 +43,14 @@ class Category extends CI_Controller
     public function edit($id)
     {
         $data['title'] = ' Edit Category ';
-
+        $data['notif'] = $this->Mnotif->Notification();
         $data['category'] = $this->db->get_where('tb_category', ['id' => $id])->row_array();
 
         $this->form_validation->set_rules('category', 'Category', 'required', ['required' => 'Kategori wajib di isi']);
         if ($this->form_validation->run() == false) {
-            $this->load->view('template/header', $data);
+            $this->load->view('template/header');
             $this->load->view('template/sidebar');
-            $this->load->view('template/topbar');
+            $this->load->view('template/topbar', $data);
             $this->load->view('admin/item/categoryedit', $data);
             $this->load->view('template/footer');
         } else {
