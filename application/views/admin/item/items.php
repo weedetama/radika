@@ -40,7 +40,6 @@
                                     <th>Harga</th>
                                     <th>Stok</th>
                                     <th>Gambar</th>
-
                                 </tr>
                             </thead>
                             <!-- READ ITEM -->

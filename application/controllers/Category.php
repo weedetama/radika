@@ -7,7 +7,6 @@ class Category extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mcategory');
-        $this->load->model('Mnotif');
         if ($this->session->userdata('role_id') != '1') {
             $this->session->set_flashdata('pesan', ' <div class="alert alert-warning" role="alert">
                 Anda belum <strong>login!</strong>

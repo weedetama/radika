@@ -44,12 +44,11 @@
                                             <div class="relative mrg-top-15">
                                                 <?php
                                                     $status = $inv->status;
-                                                    if ($status == 0) {
-                                                        echo "<span class='status away'></span><span class='pdd-left-20'>Pending</span>";
-                                                    } else {
-                                                        echo "<span class='status online'></span><span class='pdd-left-20'>Aprove</span>";
-                                                    }
-                                                    ?>
+                                                    if ($status == 0) { ?>
+                                                    <span class='status away'></span><span class='pdd-left-20'>Pending</span>
+                                                <?php  } else {  ?>
+                                                    <span class='status online'></span><span class='pdd-left-20'>Approve</span>
+                                                <?php } ?>
                                             </div>
                                         </td>
                                         <td>

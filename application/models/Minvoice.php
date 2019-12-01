@@ -112,4 +112,12 @@ class Minvoice extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('tb_invoice');
     }
+
+    public function getTanggal()
+    {
+        $query = "SELECT `tb_invoice`.*
+        FROM `tb_invoice`
+        ORDER BY `tb_invoice`.`tgl_pesan` DESC";
+        return $this->db->query($query)->result();
+    }
 }

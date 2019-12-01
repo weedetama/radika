@@ -74,7 +74,7 @@
                                                     <a href="">
                                                         <div class="info">
                                                             <span class="title">
-                                                                <span class="font-size-14 text-semibold">
+                                                                <span class="font-size-14 text-semibold text-left">
                                                                     Tidak ada pesanan !
                                                                 </span>
                                                             </span>
@@ -86,7 +86,7 @@
                                     </li>
                                     <li class="notice-footer">
                                         <span>
-                                            <a href="<?= base_url('invoice') ?>" class="text-gray">Cek Invoice <i class="ei-right-chevron pdd-left-5 font-size-10"></i></a>
+                                            <a href="<?= base_url('invoice') ?>" class="text-gray">Invoice <i class="ei-right-chevron pdd-left-5 font-size-10"></i></a>
                                         </span>
                                     </li>
                                 </ul>

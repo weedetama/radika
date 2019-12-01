@@ -65,4 +65,12 @@ class Mitem extends CI_Model
             return array();
         }
     }
+
+    public function getStok()
+    {
+        $query = "SELECT `tb_barang`.*
+        FROM `tb_barang`
+        ORDER BY `tb_barang`.`stok` ASC";
+        return $this->db->query($query)->result();
+    }
 }
